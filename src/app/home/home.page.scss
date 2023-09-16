@@ -1,0 +1,113 @@
+/* Estilos para centrar verticalmente el ícono */
+.title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilos para el ícono centrado */
+.centered-icon {
+  width: 100px; /* Ajusta el tamaño del ícono según tus preferencias */
+  height: auto; /* Mantén la proporción de aspecto */
+}
+ion-toolbar{
+  background-color: var(--ion-color-mis_colores);
+}
+
+
+/* Estilo para el contenedor del botón en la parte inferior */
+.bottom-button-container {
+  position: relative;
+  
+}
+
+
+
+
+
+
+.full-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Esto establece la altura de la página al 100% de la altura de la ventana del navegador */
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la imagen cubra todo el espacio disponible */
+  position: absolute; /* Posiciona la imagen encima del contenido */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+/* Cambiar el tamaño de la imagen */
+.mi-panel-header .panel {
+  width: 100px;
+  height: auto;
+  margin: 10px; /* Agregar margen alrededor de la imagen */
+  }
+  
+  /* Cambiar el tamaño de fuente del título */
+  .mi-panel-header .ion-title {
+  font-size: 20px;
+  font-weight: bold; /* Hacer que el título sea negrita */
+  color: #cc3a3a; /* Cambiar el color del texto del título */
+  }
+
+  .centered-button {
+    position: absolute;
+    bottom: 60px; /* Ajusta la distancia desde abajo según tus preferencias */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%);
+    width: 50%; /* Ajusta el ancho según tus preferencias */
+    background-color: #FFB800; /* Cambia esto al color que desees */
+    color: #fff; /* Cambia el color del texto si es necesario */
+    border: none; /* Si deseas quitar el borde */
+    height: 60px; /* Ajusta la altura según tus preferencias */
+    font-size: 1.6em; /* Ajusta el tamaño del texto según tus preferencias */
+    padding: 0 2em; /* Ajusta el espaciado interno según tus preferencias */
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+  }
+  
+  .centered-button:hover {
+    background-color: #fff; /* Cambia el color de fondo al pasar el cursor */
+    color: #FFB800; /* Cambia el color del texto al pasar el cursor */
+  }
+  
+  .centered-button:before,
+  .centered-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #FFB800;
+    transition: 400ms ease all;
+  }
+  
+  .centered-button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+  
+  .centered-button:hover:before,
+  .centered-button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+  }
+  
+  
+
+  
+  
+  

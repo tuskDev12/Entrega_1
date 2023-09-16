@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title-center">
+      <img src="assets/img/duoc.png" alt="Ico" class="centered-icon">
+    </ion-title>
+  </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title>correo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <h1>Recuperar contraseña</h1>
+    <ion-card>
+      <ion-card-subtitle>Ingresa tu correo</ion-card-subtitle>
+      <ion-input type="text" [(ngModel)]="correo" placeholder="Ingrese su correo"></ion-input>
+      <button class="mi-boton" (click)="ingresarPaginaValidarRespuestaSecreta()">INGRESAR</button>
+    </ion-card>
+  </ion-content>
+</ion-content>
+

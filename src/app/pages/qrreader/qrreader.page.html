@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title-center">
+      <img src="assets/img/duoc.png" alt="Ico" class="centered-icon"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-header>
+  <br>
+  <ion-toolbar color="--ion-color-amarillo">
+    <ion-title class="ion-text-center">¡Binvenido!</ion-title>
+    <p class="ion-text-center" *ngIf="usuario"> {{ usuario.nombre }}</p>
+  </ion-toolbar>
+</ion-header>
+  <br>
+  <img src="../assets/img/01.avif" alt="Imagen de fondo" class="background-image">
+  <ion-button *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="">
+    <ion-icon slot="start" name="qr-code"></ion-icon>Escanear qr</ion-button>
+
+  <ion-button *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Finalizar
+  </ion-button>
+  
+  <video #video [hidden]="!escaneando" width="100%" ></video>
+  <canvas #canvas hidden></canvas>
+
+  <ion-card class="f">
+  
+    <ion-card-content class="borde">
+      <h2 *ngIf="datosQR">
+        {{ datosQR }}
+      </h2>
+      <h2 *ngIf="!datosQR">
+         </h2>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-button expand="full" onclick="location.reload()">Limpiar</ion-button>
+  
+</ion-content>
+
+

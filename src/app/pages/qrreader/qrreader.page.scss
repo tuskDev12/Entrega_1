@@ -1,0 +1,60 @@
+.borde {
+  border: 2px solid rgba(255, 196, 0, 0.925);
+  min-height: 100px;
+  padding: 10px;
+  
+}
+.f{
+  opacity: 0.8;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la imagen cubra todo el espacio disponible */
+  position: absolute; /* Posiciona la imagen encima del contenido */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+
+/* Cambiar el tamaño de la imagen */
+.mi-panel-header .panel {
+  width: 100px;
+  height: auto;
+  margin: 10px; /* Agregar margen alrededor de la imagen */
+  }
+  
+  /* Cambiar el tamaño de fuente del título */
+  .mi-panel-header .ion-title {
+  font-size: 20px;
+  font-weight: bold; /* Hacer que el título sea negrita */
+  color: #cc3a3a; /* Cambiar el color del texto del título */
+  }
+  /* Cambiar el color de fondo de la barra en la clase .mi-panel-header */
+  .mi-panel-header {
+  background-color: rgb(29, 191, 245); /* Cambia el color de fondo a lightblue */
+  }
+
+  ion-toolbar{
+    background-color: var(--ion-color-amarillo);
+  }
+  /* Estilos para centrar verticalmente el ícono */
+.title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilos para el ícono centrado */
+.centered-icon {
+  width: 100px; /* Ajusta el tamaño del ícono según tus preferencias */
+  height: auto; /* Mantén la proporción de aspecto */
+}
+
+
+
+  
+ 

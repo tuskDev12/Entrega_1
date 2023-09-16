@@ -1,0 +1,56 @@
+/* Estilos para centrar verticalmente el ícono */
+.title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilos para el ícono centrado */
+.centered-icon {
+  width: 100px; /* Ajusta el tamaño del ícono según tus preferencias */
+  height: auto; /* Mantén la proporción de aspecto */
+}
+.mi-boton {
+  background: #FFB800;
+  color: #fff;
+  border: none;
+  position: relative;
+  height: 20px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  
+  }
+  
+  .mi-boton:hover {
+  background: #fff;
+  color: #FFB800;
+  }
+  
+  .mi-boton:before,
+  .mi-boton:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #FFB800;
+  transition: 400ms ease all;
+  }
+  
+  .mi-boton:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+  }
+  
+  .mi-boton:hover:before,
+  .mi-boton:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+  }

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color= "mis_colores">
+    <ion-title>Logeado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Comienza el Header -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-left ion-text">
+      SkeletonAPP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- Termina el Header -->
+
+<!-- Comienza el Content -->
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <ion-title class="ion-padding-top">
+    <ion-label>
+      <h1 class="ion-text-center">¡Bienvenido!</h1>
+      <!-- {{interpolacion}} 
+          Permite mostrar los datos desde el script a la visual
+          verificar el data en el home.page.ts
+        -->
+      <p class="ion-text-center" *ngIf="usuario"> {{ usuario.nombre }}</p>
+    </ion-label>
+  </ion-title>
+  <b class="ion-text-center">
+    <h4>Escanear QR</h4>
+  </b>
+<!-- Agregar qr abajo -->
+
+
+</ion-content>
+

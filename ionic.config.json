@@ -1,0 +1,7 @@
+{
+  "name": "CodigoQrApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title-center">
+      <img src="assets/img/duoc.png" alt="Ico" class="centered-icon"></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <h1>Respuesta</h1>
+  <ion-card>
+    <ion-card-subtitle>Ingresa tu respuesta</ion-card-subtitle>
+    <ion-input type="text" [(ngModel)]="respuesta" placeholder="Ingrese su respuesta"></ion-input>
+    <button class="mi-boton" (click)="validarRespuestaSecreta()">INGRESAR</button>
+    <br>
+    <br>
+    <br>
+    <button class="mi-boton" [routerLink]="['/login']" color="var(--mi-color-personalizado)">REGRESAR</button>
+
+  </ion-card>
+</ion-content>
+

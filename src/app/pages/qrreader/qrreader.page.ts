@@ -4,6 +4,7 @@ import jsQR, { QRCode } from 'jsqr';
 import { Usuario } from 'src/app/model/usuario';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, IonicSafeString } from '@ionic/angular';
+import { AnimationController} from '@ionic/angular';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { AlertController, IonicSafeString } from '@ionic/angular';
   styleUrls: ['./qrreader.page.scss'],
 })
 export class QrreaderPage implements OnInit {
+
+  @ViewChild('titulo', { read: ElementRef }) itemTitulo!: ElementRef;
 
   @ViewChild('video')
   private video!: ElementRef;
@@ -23,10 +26,25 @@ export class QrreaderPage implements OnInit {
   public escaneando = false;
   public datosQR: string = '';
   public usuario: Usuario = new Usuario('', '', '', '', '');
+  public loading= null;
+
+  public bloqueInicio: number = 0;
+  public bloqueTermino: number = 0;
+  public dia: string = ''
+  public horaFin: string = ''
+  public horaInicio: string = ''
+  public idAsignatura: string = ''
+  public nombreAsignatura: string = ''
+  public nombreProfesor: string = ''
+  public seccion: string = ''
+  public sede: string = ''
+
+  
 
   constructor(
     private activeroute: ActivatedRoute
   , private router: Router
+  , private animationController: AnimationController
   , private alertController: AlertController) {
 
 this.activeroute.queryParams.subscribe(params => {      
@@ -100,13 +118,60 @@ this.activeroute.queryParams.subscribe(params => {
   public mostrarDatosQROrdenados(datosQR: string): void {
     this.datosQR = datosQR;
     const objetoDatosQR = JSON.parse(datosQR);
+        // Puedes realizar acciones adicionales con los datos QR aquí
+        this.bloqueInicio = objetoDatosQR.bloqueInicio;
+        this.bloqueTermino= objetoDatosQR.bloqueTermino;
+        this.dia= objetoDatosQR.dia;
+        this.horaFin= objetoDatosQR.horaFin;
+        this.horaInicio= objetoDatosQR.horaInicio;
+        this.idAsignatura= objetoDatosQR.idAsignatura;
+        this.nombreAsignatura= objetoDatosQR.nombreAsignatura;
+        this.nombreProfesor= objetoDatosQR.nombreProfesor;
+        this.seccion= objetoDatosQR.seccion;
+        this.sede= objetoDatosQR.sede;
 
   }
 
+  public limpiarDatos(): void {
+    this.escaneando = false;
+    this.datosQR = '';
+    this.loading = null;
+    (document.getElementById('input-file') as HTMLInputElement)
+
+    this.bloqueInicio= 0;
+    this.bloqueTermino= 0;
+    this.dia= ''
+    this.horaFin= ''
+    this.horaInicio= ''
+    this.idAsignatura= ''
+    this.nombreAsignatura= ''
+    this.nombreProfesor= ''
+    this.seccion= ''
+    this.sede= ''
+
+    
+  }
 
 
   public detenerEscaneoQR(): void {
     this.escaneando = false;
   }
 
+
+
+
+
+  public ngAfterViewInit(): void {
+    if (this.itemTitulo) {
+      const animation = this.animationController
+        .create()
+        .addElement(this.itemTitulo.nativeElement)
+        .iterations(Infinity)
+        .duration(6000)
+        .fromTo('transform', 'translate(0%)', 'translate(100%)')
+        .fromTo('opacity', 0.2, 1);
+
+      animation.play();
+    }
+  }
 }

@@ -54,6 +54,21 @@
   height: auto; /* Mantén la proporción de aspecto */
 }
 
+/* Estilo personalizado para botones amarillos */
+.boton-amarillo {
+  background-color:rgba(248,179,28,255); 
+  color: black; 
+  border-radius: 20px;
+}
+
+ion-button {
+  --background: rgba(248,179,28,255)
+  --color:black;
+}
+
+
+
+
 
 
   

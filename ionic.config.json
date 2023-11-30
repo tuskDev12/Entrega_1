@@ -1,7 +1,7 @@
 {
-  "name": "CodigoQrApp",
+  "name": "registroapp",
   "integrations": {
     "capacitor": {}
   },
-  "type": "angular"
+  "type": "angular-standalone"
 }
